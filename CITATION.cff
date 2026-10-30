@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Αν χρησιμοποιήσετε αυτό το υλικό, παρακαλούμε να το αναφέρετε ως εξής."
+type: dataset
+title: "Εισαγωγή στον Διαδραστικό Σχεδιασμό: Σημειώσεις και παρουσιάσεις του μαθήματος «Διαδραστικός Σχεδιασμός»"
+version: "1.1"
+date-released: 2026-10-29
+doi: 10.5281/zenodo.23731533
+license: CC-BY-NC-ND-4.0
+url: "https://doi.org/10.5281/zenodo.23731533"
+authors:
+  - family-names: Korakakis
+    given-names: Georgios
+    orcid: "https://orcid.org/0009-0005-0042-6348"
+    affiliation: "University of West Attica"

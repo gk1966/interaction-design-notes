@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Εισαγωγή στον Διαδραστικό Σχεδιασμό · Σημειώσεις μαθήματος</title>
+<meta name="description" content="Ανοιχτές σημειώσεις (150 σελίδες) και 12 παρουσιάσεις για το μάθημα «Διαδραστικός Σχεδιασμός», Τμήμα Γραφιστικής και Οπτικής Επικοινωνίας, Πανεπιστήμιο Δυτικής Αττικής.">
+<meta name="author" content="Γεώργιος Κορακάκης">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Εισαγωγή στον Διαδραστικό Σχεδιασμό">
+<meta property="og:description" content="Σημειώσεις και παρουσιάσεις του μαθήματος «Διαδραστικός Σχεδιασμός» · ανοιχτή πρόσβαση, DOI 10.5281/zenodo.23731533">
+<meta property="og:image" content="og.jpg">
+<meta name="theme-color" content="#1D4E74">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1D4E74; --navy-d:#163C5A; --teal:#1D7E7B; --ochre:#B07D1E;
+  --ink:#1E2A33; --mute:#5B6B78; --line:#D5DEE5; --paper:#FFFFFF; --wash:#F4F8FA; --pale-t:#E8F4F3;
+  --card:#FFFFFF; --focus:#B07D1E;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --ink:#E4EBF0; --mute:#A3B2BE; --line:#2C3E4D; --paper:#0F1A23; --wash:#14222D; --pale-t:#143633;
+    --card:#172733; --teal:#4DB6B1; --navy:#6FA3CF; --ochre:#E0AE4F; --focus:#E0AE4F; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:"Noto Serif",Georgia,serif;font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--paper)}
+h1,h2,h3,.sans,summary,.btn,nav,.card-num,.page,.fmt,footer{font-family:"Noto Sans",system-ui,sans-serif}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 12px;z-index:10}
+.skip:focus{left:8px}
+
+/* hero */
+.hero{background:linear-gradient(160deg,#1D4E74 0%,#163C5A 65%,#12324B 100%);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center;padding-top:64px;padding-bottom:64px}
+.eyebrow{font-family:"Noto Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:.8rem;font-weight:700;color:#9FD3CF;margin:0 0 14px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.12;margin:0 0 14px;font-weight:700}
+.course{font-family:"Noto Sans",sans-serif;color:#E9B95A;font-weight:600;margin:0 0 22px;font-size:1.05rem}
+.lede{max-width:56ch;color:#DCE7EF;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.98rem}
+.btn-primary{background:#E9B95A;color:#1E2A33}
+.btn-primary:hover{background:#F2C86E}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:"Noto Sans",sans-serif;font-size:.9rem;color:#C9D8E3}
+.meta a{color:#fff}
+.doi{display:inline-flex;border-radius:4px;overflow:hidden;font-size:.82rem;text-decoration:none;font-family:"Noto Sans",sans-serif}
+.doi span:first-child{background:#555;color:#fff;padding:3px 8px}
+.doi span:last-child{background:#0E76B8;color:#fff;padding:3px 8px}
+.cover{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 24px 50px rgba(0,0,0,.35);transform:rotate(1.5deg)}
+
+/* sections */
+section{padding:64px 0}
+section.alt{background:var(--wash)}
+h2{font-size:1.75rem;margin:0 0 8px;color:var(--navy)}
+.sub{color:var(--mute);margin:0 0 32px;max-width:65ch}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.fact{border-top:3px solid var(--teal);padding-top:12px}
+.fact b{display:block;font-family:"Noto Sans",sans-serif;font-size:2rem;color:var(--teal);line-height:1.1}
+.fact span{color:var(--mute);font-size:.95rem}
+.inside{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;padding:0;list-style:none}
+.inside li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:.98rem}
+.inside strong{font-family:"Noto Sans",sans-serif;color:var(--navy);display:block;margin-bottom:2px}
+
+/* chapters */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column}
+.card-num{font-size:.85rem;font-weight:700;color:var(--teal);letter-spacing:.08em}
+.card h3{font-size:1.18rem;line-height:1.3;margin:4px 0 10px;color:var(--ink)}
+.intro{font-size:.96rem;color:var(--mute);margin:0 0 12px}
+details{border-top:1px solid var(--line);padding-top:8px;margin-top:auto}
+summary{cursor:pointer;font-weight:600;font-size:.92rem;color:var(--navy);padding:4px 0}
+.goals-lead{font-size:.9rem;color:var(--mute);margin:8px 0 4px}
+details ul{margin:0 0 8px;padding-left:20px;font-size:.93rem}
+details li{margin:3px 0}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;font-family:"Noto Sans",sans-serif;font-size:.9rem}
+.link{font-weight:600;text-decoration:none}
+.link:hover{text-decoration:underline}
+.fmt{font-size:.7rem;font-weight:700;border:1px solid currentColor;border-radius:3px;padding:0 4px;margin-left:4px}
+.page{color:var(--mute)}
+
+/* cite */
+.cite{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.box h3{margin:0 0 10px;font-size:1rem;color:var(--navy)}
+.box p{margin:0;font-size:.95rem;overflow-wrap:anywhere}
+pre{margin:0;font-size:.8rem;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,Consolas,monospace}
+.copy{margin-top:12px;font-family:"Noto Sans",sans-serif;font-size:.85rem;font-weight:600;background:var(--pale-t);color:var(--teal);border:0;border-radius:6px;padding:7px 12px;cursor:pointer}
+.note{font-size:.92rem;color:var(--mute);margin-top:20px}
+
+/* license / footer */
+.lic{display:flex;gap:20px;align-items:flex-start;max-width:820px}
+.ccbadge{flex:none;display:inline-flex;align-items:center;gap:8px;font-family:"Noto Sans",sans-serif;font-weight:700;font-size:.8rem;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;padding:6px 10px;white-space:nowrap}
+.ccbadge span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:2px solid currentColor;font-size:.72rem}
+footer{background:#12324B;color:#C9D8E3;font-size:.88rem;padding:36px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+footer a{color:#fff}
+.disclaimer{font-family:"Noto Serif",serif;font-size:.85rem;color:#9FB3C3;max-width:70ch;margin-top:10px}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:44px;padding-bottom:44px;gap:32px}
+  .hero figure{order:-1;max-width:190px}
+  .cover{transform:none}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .inside,.cite{grid-template-columns:1fr}
+  section{padding:48px 0}
+}
+@media (max-width:420px){ .grid{grid-template-columns:1fr} }
+@media print{ .hero{background:none;color:#000} .btns,.copy,.skip{display:none} }
+</style>
+</head>
+<body>
+<a class="skip" href="#kefalaia">Μετάβαση στα κεφάλαια</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Σημειώσεις μαθήματος</p>
+      <h1>Εισαγωγή στον Διαδραστικό Σχεδιασμό</h1>
+      <p class="course">Μάθημα: Διαδραστικός Σχεδιασμός</p>
+      <p class="lede">Ανοιχτές σημειώσεις και παρουσιάσεις για όσους συναντούν το αντικείμενο για πρώτη φορά: από τις βασικές έννοιες και την αξιολόγηση της ευχρηστίας ως την προσβασιμότητα και τη δεοντολογία στην εποχή της τεχνητής νοημοσύνης.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Eisagogi_Diadrastiko_Sxediasmo_Simeioseis.pdf?download=1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+          Σημειώσεις (PDF, 150 σελ.)
+        </a>
+        <a class="btn btn-ghost" href="#kefalaia">Τα 12 κεφάλαια</a>
+        <a class="btn btn-ghost" href="https://zenodo.org/records/23761580">Όλα τα αρχεία στη Zenodo</a>
+      </div>
+      <div class="meta">
+        <span>Γεώργιος Κορακάκης <a href="https://orcid.org/0009-0005-0042-6348" aria-label="Προφίλ ORCID">ORCID</a></span>
+        <span>Πανεπιστήμιο Δυτικής Αττικής</span>
+        <a class="doi" href="https://doi.org/10.5281/zenodo.23731533"><span>DOI</span><span>10.5281/zenodo.23731533</span></a>
+      </div>
+    </div>
+    <figure style="margin:0">
+      <img class="cover" src="cover.webp" width="600" height="847" alt="Εξώφυλλο των σημειώσεων «Εισαγωγή στον Διαδραστικό Σχεδιασμό»">
+    </figure>
+  </div>
+</header>
+
+<main id="main">
+<section>
+  <div class="wrap">
+    <h2>Με μια ματιά</h2>
+    <p class="sub">Απλή γλώσσα, πολλά σχήματα και παραδείγματα από γνώριμες καταστάσεις. Κάθε κεφάλαιο των σημειώσεων αντιστοιχεί σε μία παρουσίαση του μαθήματος.</p>
+    <div class="facts">
+      <div class="fact"><b>150</b><span>σελίδες σημειώσεων</span></div>
+      <div class="fact"><b>12</b><span>κεφάλαια και παρουσιάσεις</span></div>
+      <div class="fact"><b>106</b><span>σχήματα και διαγράμματα</span></div>
+      <div class="fact"><b>CC</b><span>ανοιχτή πρόσβαση, χωρίς κόστος</span></div>
+    </div>
+    <ul class="inside">
+      <li><strong>Χάρτης εννοιών</strong>Κάθε κεφάλαιο ανοίγει με στόχους και έναν χάρτη των ενοτήτων του.</li>
+      <li><strong>Ορισμοί και παραδείγματα</strong>Οι βασικοί όροι ξεχωρίζουν σε πλαίσια, με παραδείγματα από καθημερινές εφαρμογές.</li>
+      <li><strong>Αυτοέλεγχος</strong>Σύνοψη, λέξεις-κλειδιά, ερωτήσεις και μια μικρή δραστηριότητα στο τέλος.</li>
+      <li><strong>Γλωσσάριο</strong>Ελληνικοί όροι με τον αντίστοιχο αγγλικό της διεθνούς βιβλιογραφίας.</li>
+      <li><strong>Βιβλιογραφία</strong>Οι πηγές, τα πρότυπα και η νομοθεσία στα οποία στηρίζονται οι σημειώσεις.</li>
+      <li><strong>Ενεργά περιεχόμενα</strong>Στο PDF, τα περιεχόμενα οδηγούν με ένα κλικ σε κάθε ενότητα.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="kefalaia" tabindex="-1">
+  <div class="wrap">
+    <h2>Τα κεφάλαια</h2>
+    <p class="sub">Ανοίξτε τους μαθησιακούς στόχους κάθε κεφαλαίου ή κατεβάστε την αντίστοιχη παρουσίαση. Οι σελίδες παραπέμπουν στο PDF των σημειώσεων.</p>
+    <div class="grid">
+      <article class="card" id="kef01">
+        <div class="card-num" aria-hidden="true">01</div>
+        <h3><span class="sr">Κεφάλαιο 1: </span>Διαδραστικός σχεδιασμός</h3>
+        <p class="intro">Κάθε φορά που πατάτε ένα κουμπί και περιμένετε να συμβεί κάτι, συναντάτε τον διαδραστικό σχεδιασμό. Σε αυτό το κεφάλαιο μαθαίνουμε το βασικό λεξιλόγιο που θα χρησιμοποιούμε σε όλες τις σημειώσεις.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να ορίζετε τον διαδραστικό σχεδιασμό και να τον ξεχωρίζετε από τη διεπαφή, την εμπειρία χρήστη και την ευχρηστία</li><li>να εξηγείτε τι είναι νοητικό μοντέλο, δυνατότητα δράσης, σηματοδότης, ανατροφοδότηση και αντιστοίχιση</li><li>να «διαβάζετε» μια αλληλεπίδραση ως σειρά από καταστάσεις και μεταβάσεις</li><li>να περιγράφετε σε γενικές γραμμές τον ανθρωποκεντρικό σχεδιασμό</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef01.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 3</span>
+        </div>
+      </article>
+      <article class="card" id="kef02">
+        <div class="card-num" aria-hidden="true">02</div>
+        <h3><span class="sr">Κεφάλαιο 2: </span>Θεωρητικά μοντέλα και μεθοδολογίες</h3>
+        <p class="intro">Ο καλός σχεδιασμός δεν στηρίζεται μόνο στην έμπνευση. Χρειάζεται μοντέλα για να καταλαβαίνουμε τη δράση των ανθρώπων και μεθόδους για να οργανώνουμε τη δουλειά και να ελέγχουμε αν μια λύση πετυχαίνει.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να εξηγείτε τι είναι ένα θεωρητικό μοντέλο και σε τι διαφέρει από μια μέθοδο</li><li>να εφαρμόζετε τον κύκλο δράσης του Norman για να εντοπίζετε το χάσμα εκτέλεσης και το χάσμα αξιολόγησης</li><li>να περιγράφετε τον ανθρωποκεντρικό και τον επαναληπτικό σχεδιασμό</li><li>να επιλέγετε τύπο πρωτοτύπου ανάλογα με το ερώτημα που θέλετε να απαντήσετε</li><li>να αναλύετε ένα έργο με το πλαίσιο PACT</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef02.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 17</span>
+        </div>
+      </article>
+      <article class="card" id="kef03">
+        <div class="card-num" aria-hidden="true">03</div>
+        <h3><span class="sr">Κεφάλαιο 3: </span>Στοιχεία και αρχές διεπαφών</h3>
+        <p class="intro">Τυπογραφία, χρώμα, εικονίδια, κουμπιά και φόρμες είναι τα «υλικά» με τα οποία χτίζεται μια διεπαφή. Εδώ μαθαίνουμε τι κάνει το καθένα και πώς συνδυάζονται σε μια καθαρή, συνεπή οθόνη.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να αναγνωρίζετε τα βασικά στοιχεία μιας διεπαφής και τον ρόλο τους</li><li>να χρησιμοποιείτε τυπογραφία, χρώμα και εικονίδια με κριτήριο την κατανόηση</li><li>να σχεδιάζετε τις καταστάσεις ενός διαδραστικού στοιχείου και μια απλή μικροαλληλεπίδραση</li><li>να εφαρμόζετε την οπτική ιεραρχία και τις αρχές Gestalt</li><li>να συνδέετε τα επιμέρους στοιχεία σε ένα σύστημα σχεδίασης</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef03.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 29</span>
+        </div>
+      </article>
+      <article class="card" id="kef04">
+        <div class="card-num" aria-hidden="true">04</div>
+        <h3><span class="sr">Κεφάλαιο 4: </span>Τεχνολογίες και εργαλεία</h3>
+        <p class="intro">Μια σχεδιαστική ιδέα γίνεται πραγματική μόνο όταν υλοποιηθεί. Ο σχεδιαστής δεν χρειάζεται να είναι προγραμματιστής, χρειάζεται όμως να καταλαβαίνει τα υλικά της υλοποίησης και τα εργαλεία με τα οποία δουλεύει η ομάδα.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να περιγράφετε πώς συνεργάζονται διεπαφή, υπηρεσία και δεδομένα</li><li>να διακρίνετε τους ρόλους της HTML, της CSS και της JavaScript</li><li>να εξηγείτε γιατί η σημασιολογία και η αποκρινόμενη διάταξη επηρεάζουν την εμπειρία</li><li>να επιλέγετε εργαλείο πρωτοτυποποίησης ανάλογα με το ερώτημα</li><li>να περιγράφετε τα επίπεδα ενός συστήματος σχεδίασης και τις νέες μορφές αλληλεπίδρασης</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef04.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 40</span>
+        </div>
+      </article>
+      <article class="card" id="kef05">
+        <div class="card-num" aria-hidden="true">05</div>
+        <h3><span class="sr">Κεφάλαιο 5: </span>Αρχιτεκτονική πληροφορίας και πλοήγηση</h3>
+        <p class="intro">Η καλύτερη πληροφορία είναι άχρηστη αν κανείς δεν μπορεί να τη βρει. Η αρχιτεκτονική πληροφορίας οργανώνει, ονομάζει και συνδέει το περιεχόμενο ώστε οι άνθρωποι να βρίσκουν αυτό που ψάχνουν — και να ξέρουν πού βρίσκονται.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να ορίζετε την αρχιτεκτονική πληροφορίας και τα τέσσερα υποσυστήματά της</li><li>να χρησιμοποιείτε την ταξινόμηση καρτών και τον έλεγχο ιεραρχίας</li><li>να επιλέγετε κατάλληλη δομή και μοτίβα πλοήγησης</li><li>να υποστηρίζετε τον προσανατολισμό του χρήστη</li><li>να σχεδιάζετε αναζήτηση και φίλτρα (φασέτες) που βοηθούν την ευρεσιμότητα</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef05.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 52</span>
+        </div>
+      </article>
+      <article class="card" id="kef06">
+        <div class="card-num" aria-hidden="true">06</div>
+        <h3><span class="sr">Κεφάλαιο 6: </span>Πολυμέσα και περιεχόμενο</h3>
+        <p class="intro">Κείμενο, εικόνα, κίνηση, βίντεο και ήχος δεν είναι διακόσμηση. Καθένα επικοινωνεί διαφορετικά πράγματα και απαιτεί διαφορετική νοητική προσπάθεια. Εδώ μαθαίνουμε πώς διαλέγουμε, προετοιμάζουμε και κάνουμε προσβάσιμα τα πολυμέσα.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να επιλέγετε το κατάλληλο μέσο ανάλογα με τον στόχο</li><li>να εξηγείτε τη διπλή κωδικοποίηση, τη θεωρία της πολυμεσικής μάθησης και το γνωστικό φορτίο</li><li>να διακρίνετε μορφές αρχείων και να εκτιμάτε την επίδρασή τους στην απόδοση</li><li>να εφαρμόζετε τις αρχές πολυμεσικού σχεδιασμού του Mayer</li><li>να κάνετε προσβάσιμες εικόνες, βίντεο και ήχο</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef06.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 62</span>
+        </div>
+      </article>
+      <article class="card" id="kef07">
+        <div class="card-num" aria-hidden="true">07</div>
+        <h3><span class="sr">Κεφάλαιο 7: </span>Αλληλεπίδραση ανθρώπου–υπολογιστή</h3>
+        <p class="intro">Για να σχεδιάσουμε για ανθρώπους, χρειάζεται να ξέρουμε πώς αντιλαμβάνονται, πώς θυμούνται, πόσο γρήγορα κινούνται και γιατί κάνουν λάθη. Η HCI μάς δίνει αυτά τα θεμέλια — και μερικά απλά μοντέλα που μπορούμε ακόμη και να υπολογίσουμε.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να περιγράφετε το αντικείμενο της HCI και τις τέσσερις διαστάσεις μιας αλληλεπίδρασης</li><li>να εξηγείτε τον ρόλο της αντίληψης, της προσοχής και της μνήμης στη χρήση</li><li>να εφαρμόζετε βασικές αρχές ευχρηστίας και την έννοια της άμεσης χειραγώγησης</li><li>να υπολογίζετε απλά παραδείγματα με GOMS/KLM, τον νόμο του Fitts και τον νόμο Hick–Hyman</li><li>να ξεχωρίζετε ολισθήματα από λάθη κρίσης και να προτείνετε πρόληψη και ανάκαμψη</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef07.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 73</span>
+        </div>
+      </article>
+      <article class="card" id="kef08">
+        <div class="card-num" aria-hidden="true">08</div>
+        <h3><span class="sr">Κεφάλαιο 8: </span>Ευχρηστία και αξιολόγηση</h3>
+        <p class="intro">Πώς ξέρουμε ότι ένας σχεδιασμός λειτουργεί; Όχι επειδή αρέσει στην ομάδα, αλλά επειδή τον αξιολογήσαμε. Εδώ γνωρίζουμε τις βασικές μεθόδους: από την επιθεώρηση από ειδικούς ως τις δοκιμές με χρήστες και τα πειράματα A/B.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να ορίζετε την ευχρηστία και να τη διακρίνετε από την προσβασιμότητα και την εμπειρία χρήστη</li><li>να εφαρμόζετε τις δέκα ευρετικές αρχές του Nielsen και τη γνωσιακή διαδρομή</li><li>να οργανώνετε μια απλή δοκιμή ευχρηστίας με σενάρια και έκφραση σκέψης φωναχτά</li><li>να υπολογίζετε και να ερμηνεύετε βασικές μετρικές και τη βαθμολογία SUS</li><li>να εξηγείτε τη λογική μιας δοκιμής A/B</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef08.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 84</span>
+        </div>
+      </article>
+      <article class="card" id="kef09">
+        <div class="card-num" aria-hidden="true">09</div>
+        <h3><span class="sr">Κεφάλαιο 9: </span>Έρευνα χρηστών και εμπειρία χρήστη</h3>
+        <p class="intro">Δεν σχεδιάζουμε για τον εαυτό μας. Η έρευνα χρηστών μάς δείχνει ποιοι είναι οι άνθρωποι που θα χρησιμοποιήσουν ένα σύστημα, τι προσπαθούν να πετύχουν και τι τους δυσκολεύει — και μετατρέπει αυτή τη γνώση σε σχεδιαστικές αποφάσεις.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να εξηγείτε γιατί οι δηλώσεις των χρηστών διαφέρουν από τη συμπεριφορά τους</li><li>να επιλέγετε μέθοδο έρευνας (συνέντευξη, παρατήρηση, ερωτηματολόγιο, ημερολόγιο, αναλυτικά δεδομένα)</li><li>να μετατρέπετε ευρήματα σε ανάγκες, απαιτήσεις και κριτήρια αποδοχής</li><li>να δημιουργείτε περσόνες, σενάρια, ιστορίες χρήστη και χάρτες διαδρομής</li><li>να περιγράφετε την εμπειρία χρήστη στον χρόνο και τα πέντε επίπεδα του Garrett</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef09.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 95</span>
+        </div>
+      </article>
+      <article class="card" id="kef10">
+        <div class="card-num" aria-hidden="true">10</div>
+        <h3><span class="sr">Κεφάλαιο 10: </span>Προσβασιμότητα και συμπεριληπτικός σχεδιασμός</h3>
+        <p class="intro">Ένα σύστημα που δεν μπορεί να χρησιμοποιήσει κάποιος με αναπηρία δεν είναι «σχεδόν έτοιμο» — είναι ελλιπές. Η προσβασιμότητα είναι βασική ποιότητα του σχεδιασμού και, για πολλές υπηρεσίες, νομική υποχρέωση.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να εξηγείτε τι είναι προσβασιμότητα και ποιους αφορά</li><li>να περιγράφετε τις αρχές POUR και τα επίπεδα των WCAG 2.2</li><li>να ελέγχετε βασικές απαιτήσεις: πληκτρολόγιο, εστίαση, αντίθεση, στόχους, φόρμες</li><li>να εξηγείτε τον ρόλο του σημασιολογικού HTML και της WAI-ARIA</li><li>να γράφετε κατάλληλο εναλλακτικό κείμενο και να συνδυάζετε μεθόδους ελέγχου</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef10.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 106</span>
+        </div>
+      </article>
+      <article class="card" id="kef11">
+        <div class="card-num" aria-hidden="true">11</div>
+        <h3><span class="sr">Κεφάλαιο 11: </span>Κινητές και πολυκαναλικές εμπειρίες</h3>
+        <p class="intro">Χρησιμοποιούμε το κινητό όρθιοι, με το ένα χέρι, με διακοπές και ασταθές δίκτυο — και συνεχίζουμε την ίδια εργασία στον υπολογιστή ή σε ένα email. Εδώ μαθαίνουμε να σχεδιάζουμε για μικρές οθόνες, για την αφή και για υπηρεσίες που απλώνονται σε πολλά κανάλια.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να εφαρμόζετε τη λογική mobile-first στην ιεράρχηση περιεχομένου</li><li>να διακρίνετε αποκρινόμενο και προσαρμοζόμενο σχεδιασμό</li><li>να σχεδιάζετε στόχους αφής και διεπαφές για χρήση με ένα χέρι</li><li>να κάνετε τις χειρονομίες ανακαλύψιμες και προσβάσιμες</li><li>να σχεδιάζετε για διακοπές, ασταθές δίκτυο και συνέχεια ανάμεσα σε συσκευές και κανάλια</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef11.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 117</span>
+        </div>
+      </article>
+      <article class="card" id="kef12">
+        <div class="card-num" aria-hidden="true">12</div>
+        <h3><span class="sr">Κεφάλαιο 12: </span>Δεοντολογία, τάσεις και τεχνητή νοημοσύνη</h3>
+        <p class="intro">Κάθε σχεδιαστική απόφαση επηρεάζει ανθρώπους: τι επιλέγουν, τι πληρώνουν, τι δεδομένα μοιράζονται, πόσο εμπιστεύονται ένα σύστημα. Στο τελευταίο κεφάλαιο εξετάζουμε την ευθύνη του σχεδιαστή, την αλληλεπίδραση με την τεχνητή νοημοσύνη και τις νέες μορφές διεπαφών.</p>
+        <details>
+          <summary>Μαθησιακοί στόχοι</summary>
+          <p class="goals-lead">Μετά το κεφάλαιο θα μπορείτε:</p>
+          <ul><li>να εφαρμόζετε έξι βασικές αρχές δεοντολογίας στον σχεδιασμό</li><li>να ξεχωρίζετε υποστήριξη, πειθώ, χειραγώγηση και εξαπάτηση</li><li>να αναγνωρίζετε παραπλανητικά μοτίβα και να προτείνετε έντιμες εναλλακτικές</li><li>να σχεδιάζετε επιλογές συγκατάθεσης και ελαχιστοποίηση δεδομένων</li><li>να περιγράφετε βασικές αρχές σχεδιασμού για συστήματα ΤΝ και νέες διεπαφές</li></ul>
+        </details>
+        <div class="card-foot">
+          <a class="link" href="https://zenodo.org/records/23761580/files/Korakakis_2026_Diadrastikos_Sxediasmos_Parousiasi_Kef12.pdf?download=1">Παρουσίαση <span class="fmt">PDF</span></a>
+          <span class="page">Σημειώσεις, σελ. 128</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="parapompi">
+  <div class="wrap">
+    <h2>Πώς παραπέμπετε</h2>
+    <p class="sub">Το υλικό έχει μόνιμο αναγνωριστικό DOI. Για να οδηγείτε πάντα στην πιο πρόσφατη έκδοση, χρησιμοποιήστε το <a href="https://doi.org/10.5281/zenodo.23731533">10.5281/zenodo.23731533</a>.</p>
+    <div class="cite">
+      <div class="box">
+        <h3>APA 7</h3>
+        <p id="apa">Korakakis, G. (2026). <em>Εισαγωγή στον Διαδραστικό Σχεδιασμό: Σημειώσεις και παρουσιάσεις του μαθήματος «Διαδραστικός Σχεδιασμός»</em> (Έκδοση 1.1) [Διδακτικό υλικό]. Zenodo. https://doi.org/10.5281/zenodo.23761580</p>
+        <button class="copy" type="button" data-target="apa">Αντιγραφή</button>
+      </div>
+      <div class="box">
+        <h3>BibTeX</h3>
+        <pre id="bib">@misc{korakakis_2026_diadrastikos,
+  author    = {Korakakis, Georgios},
+  title     = {Εισαγωγή στον Διαδραστικό Σχεδιασμό: Σημειώσεις και παρουσιάσεις του μαθήματος «Διαδραστικός Σχεδιασμός»},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {1.1},
+  doi       = {10.5281/zenodo.23761580},
+  url       = {https://doi.org/10.5281/zenodo.23761580}
+}</pre>
+        <button class="copy" type="button" data-target="bib">Αντιγραφή</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="adeia">
+  <div class="wrap">
+    <h2>Άδεια χρήσης</h2>
+    <div class="lic">
+      <a class="ccbadge" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.el" aria-label="Άδεια Creative Commons BY-NC-ND 4.0"><span>cc</span>BY-NC-ND 4.0</a>
+      <p style="margin:0">Οι σημειώσεις και οι παρουσιάσεις διατίθενται με άδεια <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.el">Creative Commons Αναφορά Δημιουργού – Μη Εμπορική Χρήση – Όχι Παράγωγα Έργα 4.0 Διεθνές</a>. Μπορείτε να τις διαβάσετε, να τις εκτυπώσετε και να τις μοιραστείτε, με αναφορά στον δημιουργό, για μη εμπορικούς σκοπούς και χωρίς τροποποιήσεις.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong style="color:#fff">© 2026 Γεώργιος Κορακάκης</strong><br>
+      Τμήμα Γραφιστικής και Οπτικής Επικοινωνίας · Σχολή Εφαρμοσμένων Τεχνών και Πολιτισμού · Πανεπιστήμιο Δυτικής Αττικής
+      <p class="disclaimer">Τα πρόσωπα, οι οθόνες, οι υπηρεσίες και οι αριθμοί στα παραδείγματα είναι υποθετικά. Οι έρευνες, τα πρότυπα και οι νόμοι που αναφέρονται είναι πραγματικοί και τεκμηριώνονται με παραπομπές. Οι εμπορικές ονομασίες ανήκουν στους κατόχους τους. Ορισμένες εικονογραφήσεις δημιουργήθηκαν με τη βοήθεια παραγωγικής τεχνητής νοημοσύνης.</p>
+    </div>
+    <div>
+      <a href="https://zenodo.org/records/23761580">Zenodo</a> · <a href="https://orcid.org/0009-0005-0042-6348">ORCID</a> · <a href="https://gd.uniwa.gr/">gd.uniwa.gr</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = document.getElementById(b.dataset.target).innerText;
+    var done = function(){ var o=b.textContent; b.textContent='Αντιγράφηκε'; setTimeout(function(){b.textContent=o},1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function(){});
+  });
+});
+</script>
+</body>
+</html>
